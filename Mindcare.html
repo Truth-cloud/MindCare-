@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare - Student Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background: #6b4423;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .mood-check {
+            background: #8b5a2b;
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+        
+        .mood-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .mood-btn {
+            background: #a0714f;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+        
+        .mood-btn:hover {
+            background: #6b4423;
+            transform: scale(1.05);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #8b5a2b;
+        }
+        
+        .section h2 {
+            font-size: 20px;
+            color: #6b4423;
+            margin-bottom: 15px;
+        }
+        
+        .quick-help {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .help-box {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .help-box:hover {
+            background: #8b5a2b;
+            color: white;
+            border-color: #6b4423;
+        }
+        
+        .help-box strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .help-box p {
+            font-size: 12px;
+        }
+        
+        .counselor {
+            background: #f0f0f0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 4px solid #a0714f;
+        }
+        
+        .counselor strong {
+            color: #6b4423;
+        }
+        
+        .empty-field {
+            background: white;
+            padding: 2px 5px;
+            border-bottom: 2px dashed #8b5a2b;
+            font-style: italic;
+            color: #999;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        button {
+            background: #6b4423;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #8b5a2b;
+        }
+        
+        .faq-item {
+            margin: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .faq-question {
+            background: #f9f9f9;
+            padding: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #6b4423;
+        }
+        
+        .faq-answer {
+            padding: 12px;
+            display: none;
+            background: white;
+            font-size: 14px;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        footer {
+            background: #6b4423;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌱 MindCare</h1>
+        <p class="tagline">Your safe space for academic and mental wellness</p>
+    </header>
+    
+    <div class="mood-check">
+        <p><strong>How are you feeling today?</strong></p>
+        <div class="mood-buttons">
+            <button class="mood-btn" onclick="alert('We hear you. Take it one step at a time.')">😔 Struggling</button>
+            <button class="mood-btn" onclick="alert('That\'s okay to feel mixed. You\'re not alone.')">😐 Okay</button>
+            <button class="mood-btn" onclick="alert('Great! Keep taking care of yourself.')">😊 Good</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Quick Help -->
+        <div class="section">
+            <h2>Need Help?</h2>
+            <div class="quick-help">
+                <div class="help-box">
+                    <strong>📚 Academics</strong>
+                    <p>Study tips & subject support</p>
+                </div>
+                <div class="help-box">
+                    <strong>💭 Emotions</strong>
+                    <p>Deal with stress & relationships</p>
+                </div>
+                <div class="help-box">
+                    <strong>🧠 Mental Health</strong>
+                    <p>Anxiety, depression & more</p>
+                </div>
+                <div class="help-box">
+                    <strong>💬 Talk to Someone</strong>
+                    <p>Meet our counselors below</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Counselors -->
+        <div class="section">
+            <h2>Our Counselors</h2>
+            <div class="counselor">
+                <strong>Name:</strong> <span class="empty-field">[Name to be added]</span><br>
+                <strong>Specialty:</strong> <span class="empty-field">[e.g., Academic Support]</span><br>
+                <strong>Contact:</strong> <span class="empty-field">[Phone number here]</span>
+            </div>
+            <div class="counselor">
+                <strong>Name:</strong> <span class="empty-field">[Name to be added]</span><br>
+                <strong>Specialty:</strong> <span class="empty-field">[e.g., Emotional Support]</span><br>
+                <strong>Contact:</strong> <span class="empty-field">[Phone number here]</span>
+            </div>
+            <div class="counselor">
+                <strong>Name:</strong> <span class="empty-field">[Name to be added]</span><br>
+                <strong>Specialty:</strong> <span class="empty-field">[e.g., Mental Health]</span><br>
+                <strong>Contact:</strong> <span class="empty-field">[Phone number here]</span>
+            </div>
+        </div>
+        
+        <!-- Quick FAQ -->
+        <div class="section">
+            <h2>Common Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Is this confidential?</div>
+                <div class="faq-answer">Yes. All conversations with counselors are private and confidential.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How do I book a session?</div>
+                <div class="faq-answer">Call or text one of our counselors directly. Responses are usually within 24 hours.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Is this free?</div>
+                <div class="faq-answer">Yes, this service is provided by your school at no cost.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Can I talk about anything?</div>
+                <div class="faq-answer">Yes, but if there's danger, we may need to involve parents/guardians to keep you safe.</div>
+            </div>
+        </div>
+        
+        <!-- Message Form -->
+        <div class="section">
+            <h2>Send Us a Message</h2>
+            <form onsubmit="handleSubmit(event)">
+                <input type="text" placeholder="Your name" required>
+                <textarea placeholder="What's on your mind?" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p style="font-size: 11px; margin-top: 5px;">Emergency? Contact <span class="empty-field">[Emergency hotline]</span></p>
+    </footer>
+    
+    <script>
+        function toggleFaq(element) {
+            element.nextElementSibling.classList.toggle('active');
+        }
+        
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for reaching out. We\'ll get back to you soon.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
